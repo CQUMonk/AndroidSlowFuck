@@ -1,0 +1,2 @@
+## AndroidSlowFuck
+该项目是对Android代码的一些测试和备忘
