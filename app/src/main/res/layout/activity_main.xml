@@ -5,10 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.beijing.giraffeman.androidslowfuck.MainActivity">
+    tools:context="com.beijing.giraffeman.androidslowfuck.ui.MainActivity">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#5F9EA0"/>
 
     <TextView
+        android:id="@+id/lifecycle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="@string/lifecycle_of_activity"
+        android:onClick="dispatch"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:layout_margin="@dimen/activity_vertical_margin"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#5F9EA0"/>
+    <TextView
+        android:id="@+id/tv_ipc_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ipc"
+        android:onClick="dispatch"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:layout_margin="@dimen/activity_vertical_margin"/>
+
 </LinearLayout>

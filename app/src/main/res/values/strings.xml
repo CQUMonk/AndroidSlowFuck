@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AndroidSlowFuck</string>
+    <string name="lifecycle_of_activity">The Lifecycle of Activity</string>
+    <string name="singletop">SingleTop</string>
+    <string name="singletask">singleTask</string>
+    <string name="singleinstance">singleInstance</string>
+    <string name="ipc">IPC Activity</string>
+    <string name="messengeractivity">Messenger Activity</string>
 </resources>
