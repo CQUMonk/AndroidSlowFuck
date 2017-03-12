@@ -6,4 +6,5 @@
     <string name="singleinstance">singleInstance</string>
     <string name="ipc">IPC Activity</string>
     <string name="messengeractivity">Messenger Activity</string>
+    <string name="book_manager_activity">Book Manager Activity</string>
 </resources>

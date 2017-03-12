@@ -31,7 +31,13 @@
             android:name=".services.MessageService"
             android:process=":remote" />
 
-        <activity android:name=".ui.activity.ipc.MessengerActivity"/>
+        <activity android:name=".ui.activity.ipc.MessengerActivity" />
+
+        <service
+            android:name=".services.BookManagerService"
+            android:process=":remote" />
+
+        <activity android:name=".ui.activity.ipc.BookManagerActivity"></activity>
     </application>
 
 </manifest>

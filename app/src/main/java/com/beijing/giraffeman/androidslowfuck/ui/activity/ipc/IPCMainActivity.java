@@ -25,6 +25,8 @@ public class IPCMainActivity extends AppCompatActivity {
             case R.id.btn_messenger:
                 intent.setClass(this,MessengerActivity.class);
                 break;
+            case R.id.btn_book_aidl:
+                intent.setClass(this,BookManagerActivity.class);
 
         }
         startActivity(intent);

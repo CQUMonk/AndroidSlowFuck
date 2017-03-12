@@ -14,7 +14,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/messengeractivity"
-        android:onClick="navigate"/>
+        android:onClick="navigate"
+        android:layout_alignParentTop="true"/>
+    <Button
+        android:id="@+id/btn_book_aidl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/book_manager_activity"
+        android:onClick="navigate"
+        android:layout_below="@id/btn_messenger"/>
 
 
 </RelativeLayout>
