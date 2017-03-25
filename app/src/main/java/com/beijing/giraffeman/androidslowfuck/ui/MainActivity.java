@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.beijing.giraffeman.androidslowfuck.R;
 import com.beijing.giraffeman.androidslowfuck.ui.activity.lifecycle_launch.LifeCycleActivity;
+import com.beijing.giraffeman.androidslowfuck.ui.activity.web_view.WebViewActivity;
 
 public class MainActivity extends AppCompatActivity {
     //private static final String LIFECYCLE="lifecycle";
@@ -63,7 +64,18 @@ public class MainActivity extends AppCompatActivity {
                 intent.setComponent(new ComponentName(this,
                         "com.beijing.giraffeman.androidslowfuck.ui.activity.ipc.IPCMainActivity"));
                 startActivity(intent);
+                break;
             //setClass
+            case R.id.tv_webview:
+                intent=new Intent();
+                intent.setClass(this, WebViewActivity.class);
+                startActivity(intent);
+                break;
+
+
+
+
+
             //setClassName
 
             //implicit

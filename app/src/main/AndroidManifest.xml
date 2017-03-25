@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.beijing.giraffeman.androidslowfuck">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -37,7 +38,8 @@
             android:name=".services.BookManagerService"
             android:process=":remote" />
 
-        <activity android:name=".ui.activity.ipc.BookManagerActivity"></activity>
+        <activity android:name=".ui.activity.ipc.BookManagerActivity" />
+        <activity android:name=".ui.activity.web_view.WebViewActivity" />
     </application>
 
 </manifest>
