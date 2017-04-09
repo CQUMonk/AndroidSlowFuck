@@ -2,18 +2,20 @@ package com.beijing.giraffeman.androidslowfuck.ui.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 
-import com.beijing.giraffeman.androidslowfuck.services.WebAppInterface;
+
+
+
 import com.beijing.giraffeman.androidslowfuck.ui.activity.web_view.GiraffeWebChromeClient;
 import com.beijing.giraffeman.androidslowfuck.ui.activity.web_view.GiraffemanWebViewClient;
+import com.tencent.smtt.sdk.WebSettings;
+import com.tencent.smtt.sdk.WebView;
 
 /**
  * Created by giraffe on 2017/3/25.
  */
 
-public class GiraffeWebView extends WebView{
+public class GiraffeWebView extends WebView {
     private static final String TAG = "GiraffeWebView";
 
     private GiraffemanWebViewClient mWebViewClient;
@@ -38,8 +40,7 @@ public class GiraffeWebView extends WebView{
     private void init() {
         mWebViewClient=new GiraffemanWebViewClient();
         mWebChromeClient=new GiraffeWebChromeClient();
-        setWebViewClient(mWebViewClient);
-        setWebChromeClient(mWebChromeClient);
+
 
         //这个Java Bridge是WebView自己添加的
         //在Api 17以前,javascript可以通过java对象进行反射,执行一些不安全的操作
@@ -73,6 +74,14 @@ public class GiraffeWebView extends WebView{
         如果设置为`false`,那么可用区域和WebView的显示区域有关.
          */
         settings.setUseWideViewPort(true);
+
+
+        settings.setAllowFileAccess(true);
+        settings.setSupportMultipleWindows(false);
+        settings.setAppCacheEnabled(true);
+        settings.setGeolocationEnabled(true);
+        setWebViewClient(mWebViewClient);
+        setWebChromeClient(mWebChromeClient);
 
 
     }

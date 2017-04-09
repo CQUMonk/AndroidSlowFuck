@@ -4,11 +4,14 @@
     document.getElementById("droid").src="lyl.jpeg";
   }
 
-
+var msg={
+    'title':'message from JS'
+}
 
 </script>
+aaa bbbb cccccccccc<br/>
 <body>
-<button onclick='window.Android.showToast("hello world")'>Say Hi</button>
+<button onclick='WeixinJSCore.invokeHandler("showToast",JSON.stringify(msg),11)'>show dialog</button>
 <br/>
 <a>
     <img id="droid" src="lyl.jpeg" mce_src="ic_launch.png" width="400" height="300"/><br>

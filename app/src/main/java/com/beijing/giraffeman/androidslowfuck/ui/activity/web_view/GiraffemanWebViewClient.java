@@ -3,10 +3,12 @@ package com.beijing.giraffeman.androidslowfuck.ui.activity.web_view;
 import android.graphics.Bitmap;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebResourceResponse;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+
+import com.tencent.smtt.export.external.interfaces.WebResourceRequest;
+import com.tencent.smtt.export.external.interfaces.WebResourceResponse;
+import com.tencent.smtt.sdk.WebView;
+import com.tencent.smtt.sdk.WebViewClient;
+
 
 /**
  * Created by giraffe on 2017/3/18.
@@ -16,11 +18,7 @@ import android.webkit.WebViewClient;
 
 public class GiraffemanWebViewClient extends WebViewClient {
     private static final String TAG="GiraffemanWebViewClient";
-    @Override
-    public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-        Log.d(TAG,"shouldOverrideUrlLoading");
-        return super.shouldOverrideUrlLoading(view, request);
-    }
+
 
     @Override
     public boolean shouldOverrideKeyEvent(WebView view, KeyEvent event) {
@@ -38,6 +36,12 @@ public class GiraffemanWebViewClient extends WebViewClient {
     public void onPageFinished(WebView view, String url) {
         Log.d(TAG,"onPageFinished");
         super.onPageFinished(view, url);
+    }
+
+    @Override
+    public void onReceivedHttpError(WebView webView, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {
+        Log.d(TAG,"onReceivedHttpError");
+        super.onReceivedHttpError(webView, webResourceRequest, webResourceResponse);
     }
 
     @Override

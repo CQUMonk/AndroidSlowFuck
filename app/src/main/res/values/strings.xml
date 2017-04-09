@@ -8,4 +8,5 @@
     <string name="messengeractivity">Messenger Activity</string>
     <string name="book_manager_activity">Book Manager Activity</string>
     <string name="webview_activity">WebView Activity</string>
+    <string name="md5_activity">MD5_Activity</string>
 </resources>
