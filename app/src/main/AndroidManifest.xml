@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme">
 
         <!-- 主要界面 -->
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".mainpage.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,26 +26,14 @@
 
         <!-- 演示了activity生命周期和SingleTask启动模式 -->
         <activity
-            android:name=".ui.activity.lifecycle_launch.LifeCycleActivity"
+            android:name=".lifecycle.ui.LifeCycleActivity"
             android:configChanges="orientation" />
         <activity
-            android:name=".ui.activity.lifecycle_launch.SingleTask"
+            android:name=".lifecycle.ui.SingleTask"
             android:launchMode="singleTask" />
-        <activity android:name=".ui.activity.ipc.IPCMainActivity" />
-
-        <service
-            android:name=".services.MessageService"
-            android:process=":remote" />
-
-        <activity android:name=".ui.activity.ipc.MessengerActivity" />
-
-        <service
-            android:name=".services.BookManagerService"
-            android:process=":remote" />
-
-        <activity android:name=".ui.activity.ipc.BookManagerActivity" />
-        <activity android:name=".ui.activity.web_view.WebViewActivity" />
-        <activity android:name=".ui.activity.md5_compute.MD5Activity"/>
+        <activity android:name=".md5.MD5Activity" />
+        <!-- mvp demo -->
+        <activity android:name=".weather.ui.WeatherActivity"/>
     </application>
 
 </manifest>
