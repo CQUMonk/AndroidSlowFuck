@@ -1,4 +1,4 @@
-package com.beijing.giraffeman.androidslowfuck.util;
+package com.beijing.giraffeman.androidslowfuck.util.network;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -15,7 +15,7 @@ import android.util.Log;
  *
  * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2014-11-03
  */
-public class GiraffeNetworkUtils {
+public class GiraffeNetInfoUtils {
 
     private static final String TAG = "NetworkUtils";
 
@@ -188,4 +188,7 @@ public class GiraffeNetworkUtils {
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         return connectMgr.getActiveNetworkInfo();
     }
+
+
+
 }
