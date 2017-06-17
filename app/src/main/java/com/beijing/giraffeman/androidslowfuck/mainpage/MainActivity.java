@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.beijing.giraffeman.androidslowfuck.R;
 import com.beijing.giraffeman.androidslowfuck.lifecycle.ui.LifeCycleActivity;
+import com.beijing.giraffeman.androidslowfuck.loopview.LooperViewActivity;
 import com.beijing.giraffeman.androidslowfuck.mainpage.adapter.MainPageRecyclerViewAdapter;
 import com.beijing.giraffeman.androidslowfuck.mainpage.model.NavigatorItem;
 import com.beijing.giraffeman.androidslowfuck.md5.MD5Activity;
@@ -53,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                 MD5Activity.class));
         mModules.add(new NavigatorItem("MVP demo",getResources().getDrawable(R.drawable.icon),
                 WeatherActivity.class));
+        mModules.add(new NavigatorItem("AutoScroll demo",getResources().getDrawable(R.drawable.icon),
+                LooperViewActivity.class));
     }
 
 

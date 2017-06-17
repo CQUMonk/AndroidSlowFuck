@@ -33,7 +33,8 @@
             android:launchMode="singleTask" />
         <activity android:name=".md5.MD5Activity" />
         <!-- mvp demo -->
-        <activity android:name=".weather.ui.WeatherActivity"/>
+        <activity android:name=".weather.ui.WeatherActivity" />
+        <activity android:name=".loopview.LooperViewActivity"></activity>
     </application>
 
 </manifest>

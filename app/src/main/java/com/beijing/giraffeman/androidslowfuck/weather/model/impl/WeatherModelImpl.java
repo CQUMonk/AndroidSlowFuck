@@ -33,7 +33,7 @@ public class WeatherModelImpl implements IWeatherModel {
 
         String url = String.format("http://www.weather.com.cn/data/sk/%s.html", cityNO);
         Log.d(TAG, url);
-        
+
         Request request = new Request.Builder()
                 .url(url)
                 .build();

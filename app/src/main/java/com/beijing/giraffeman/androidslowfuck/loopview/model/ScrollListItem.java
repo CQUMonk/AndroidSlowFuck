@@ -4,18 +4,39 @@ package com.beijing.giraffeman.androidslowfuck.loopview.model;
  * Created by giraffe on 2017/6/14.
  */
 
-public class ListItem {
-    private String text;
+public class ScrollListItem {
 
-    public ListItem(String text) {
-        this.text = text;
+    private String name;
+    private String date;
+    private String words;
+
+    public ScrollListItem(String name, String date, String words) {
+        this.name = name;
+        this.date = date;
+        this.words = words;
     }
 
-    public String getText() {
-        return text;
+    public String getName() {
+        return name;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getWords() {
+        return words;
+    }
+
+    public void setWords(String words) {
+        this.words = words;
     }
 }
