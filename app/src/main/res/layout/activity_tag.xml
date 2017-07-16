@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C60A1E"
+    android:orientation="vertical"
+    tools:context="com.beijing.giraffeman.androidslowfuck.tags.TagActivity">
+<!--    <com.beijing.giraffeman.androidslowfuck.widgets.GiraffeTagLayout
+        android:id="@+id/gtl_tags_layout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />-->
+
+
+    <LinearLayout
+        android:id="@+id/ll_group_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"/>
+
+    <com.beijing.giraffeman.androidslowfuck.widgets.TagGroupLayout
+        android:id="@+id/view_tag_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#134258"/>
+
+
+</LinearLayout>

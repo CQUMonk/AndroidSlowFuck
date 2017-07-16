@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/web_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/wheat"
+    android:orientation="vertical">
+    <WebView
+        android:id="@+id/wb_web_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/aqua"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show JS Alert"
+        android:onClick="showJsAlert"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get msg from JS"
+        android:onClick="getJsMsg"/>
+
+</LinearLayout>

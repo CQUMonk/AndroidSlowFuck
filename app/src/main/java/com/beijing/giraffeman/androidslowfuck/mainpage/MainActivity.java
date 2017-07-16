@@ -8,12 +8,15 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 
 import com.beijing.giraffeman.androidslowfuck.R;
+import com.beijing.giraffeman.androidslowfuck.imagepicker.ImagePickerDemo;
 import com.beijing.giraffeman.androidslowfuck.lifecycle.ui.LifeCycleActivity;
 import com.beijing.giraffeman.androidslowfuck.loopview.LooperViewActivity;
 import com.beijing.giraffeman.androidslowfuck.mainpage.adapter.MainPageRecyclerViewAdapter;
 import com.beijing.giraffeman.androidslowfuck.mainpage.model.NavigatorItem;
 import com.beijing.giraffeman.androidslowfuck.md5.MD5Activity;
+import com.beijing.giraffeman.androidslowfuck.tags.TagActivity;
 import com.beijing.giraffeman.androidslowfuck.weather.ui.WeatherActivity;
+import com.beijing.giraffeman.androidslowfuck.web.ui.activity.WebviewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +59,13 @@ public class MainActivity extends AppCompatActivity {
                 WeatherActivity.class));
         mModules.add(new NavigatorItem("AutoScroll demo",getResources().getDrawable(R.drawable.icon),
                 LooperViewActivity.class));
+
+        mModules.add(new NavigatorItem("Tags",getResources().getDrawable(R.drawable.icon),
+                TagActivity.class));
+        mModules.add(new NavigatorItem("Image Picker",getResources().getDrawable(R.drawable.icon),
+                ImagePickerDemo.class));
+        mModules.add(new NavigatorItem("WebView Demo",getResources().getDrawable(R.drawable.icon),
+                WebviewActivity.class));
     }
 
 

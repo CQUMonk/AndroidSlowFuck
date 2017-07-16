@@ -2,11 +2,14 @@ package com.beijing.giraffeman.androidslowfuck.loopview.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.beijing.giraffeman.androidslowfuck.R;
 import com.beijing.giraffeman.androidslowfuck.loopview.model.ScrollListItem;
@@ -28,6 +31,7 @@ public class RecyclerScrollAdapter extends RecyclerView.Adapter<RecyclerScrollAd
     private LayoutInflater inflater;
     private Context context;
     private List<ScrollListItem> mDas;
+    private String mDate;
 
     public RecyclerScrollAdapter(Context context, List<ScrollListItem> mDas) {
         this.context = context;
@@ -53,8 +57,18 @@ public class RecyclerScrollAdapter extends RecyclerView.Adapter<RecyclerScrollAd
             e.printStackTrace();
         }
 
+        mDate=mDas.get(i).getDate();
         //viewHolder.date.setText(mDas.get(i).getDate());
         viewHolder.words.setText(mDas.get(i).getWords());
+
+        viewHolder.words.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("recyclerView",mDate);
+            }
+        });
+
+
     }
 
     @Override
@@ -79,6 +93,8 @@ public class RecyclerScrollAdapter extends RecyclerView.Adapter<RecyclerScrollAd
         public ScrollItemHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
+
         }
+
     }
 }

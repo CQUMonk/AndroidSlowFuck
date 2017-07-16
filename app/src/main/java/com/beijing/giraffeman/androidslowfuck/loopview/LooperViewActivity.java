@@ -4,16 +4,22 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.beijing.giraffeman.androidslowfuck.R;
 import com.beijing.giraffeman.androidslowfuck.loopview.adapter.RecyclerScrollAdapter;
 import com.beijing.giraffeman.androidslowfuck.loopview.model.ScrollListItem;
+import com.beijing.giraffeman.androidslowfuck.loopview.model.TagInfo;
+import com.beijing.giraffeman.androidslowfuck.loopview.ui.TagsContainer;
 import com.beijing.giraffeman.androidslowfuck.util.GiraffeCommonUtils;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -30,12 +36,24 @@ public class LooperViewActivity extends AppCompatActivity {
     private final String shortWords = "今天真热";
     @BindView(R.id.lv_loop)
     RecyclerView recyclerView;
+
+
     private List<ScrollListItem> data;
     private int index = 0;
     private LinearLayoutManager manager;
     private AccelerateDecelerateInterpolator mDecelerateInterpolator;
 
     private RecyclerScrollAdapter mAdapter;
+
+    private GestureDetector mGestureDetector;
+
+    private TagsContainer mTagsContainer;
+
+    private List<TagInfo> mTags;
+    private LinearLayout mContainerLayout;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +67,11 @@ public class LooperViewActivity extends AppCompatActivity {
         mDecelerateInterpolator = new AccelerateDecelerateInterpolator();
 
 
+
+
     }
 
     private void initDas() {
-
-
 
 
         data = new ArrayList<>(10);
@@ -71,6 +89,51 @@ public class LooperViewActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(manager);
         mAdapter = new RecyclerScrollAdapter(this, data);
         recyclerView.setAdapter(mAdapter);
+
+        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+            @Override
+            public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+                if (e.getAction()==MotionEvent.ACTION_UP){
+                    View child = recyclerView.findChildViewUnder(e.getX(), e.getY());
+                    if (child != null) {
+                        child.onTouchEvent(e);
+                    }
+                }
+
+                return false;
+            }
+
+            @Override
+            public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+
+
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+            }
+        });
+        mTags=new ArrayList<>(10);
+
+        for (int i=0;i<10;++i){
+            TagInfo tagInfo=new TagInfo();
+            tagInfo.setTagId(i+"");
+            tagInfo.setTagName(shortWords);
+            mTags.add(tagInfo);
+        }
+        mTagsContainer=new TagsContainer(this,mTags);
+        mTagsContainer.setOnTagTouchListener(new TagsContainer.OnTagTouchedListener() {
+            @Override
+            public void onTagTouched(TagInfo tagInfo) {
+                Toast.makeText(LooperViewActivity.this,tagInfo.getTagName()+tagInfo.getTagId(),Toast.LENGTH_SHORT).show();
+            }
+        });
+        LinearLayout.LayoutParams containerParam = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        mContainerLayout= (LinearLayout) findViewById(R.id.tag_container);
+        containerParam.setMargins(0, 0, 0, 0);
+        mContainerLayout.addView(mTagsContainer,containerParam);
 
 
     }
@@ -100,6 +163,7 @@ public class LooperViewActivity extends AppCompatActivity {
 
 
     private void autoScroll() {
+        //recyclerView.setLayoutFrozen(false);
         GiraffeCommonUtils.runInUIThread(new Runnable() {
             @Override
             public void run() {
@@ -116,7 +180,8 @@ public class LooperViewActivity extends AppCompatActivity {
      */
 
     private void scrollToNextItem() {
-        if (index >= data.size() - 2) {
+
+        if ((!recyclerView.canScrollVertically(1))) {
             index = 0;
             recyclerView.scrollToPosition(0);
         }
@@ -127,8 +192,13 @@ public class LooperViewActivity extends AppCompatActivity {
 
 
         if (nextItem != null) {
+
+
             float offset = nextItem.getTop();
+
             recyclerView.smoothScrollBy(0, (int) offset + nextItem.getHeight(), mDecelerateInterpolator);
+
+
         }
 
     }

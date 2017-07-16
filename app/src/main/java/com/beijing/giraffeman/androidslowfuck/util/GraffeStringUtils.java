@@ -1,5 +1,7 @@
 package com.beijing.giraffeman.androidslowfuck.util;
 
+import android.graphics.Paint;
+import android.text.TextUtils;
 import android.util.Log;
 
 import java.io.File;
@@ -104,5 +106,16 @@ public class GraffeStringUtils {
             result = builder.toString();
         }
         return result;
+    }
+    public static float getStringWidth(String str, float fontSize, float scaleX) {
+        if(TextUtils.isEmpty(str)) {
+            return 0.0F;
+        } else {
+            Paint paint = new Paint();
+            paint.setTextSize(fontSize);
+            float text_width = paint.measureText(str);
+            text_width *= scaleX;
+            return text_width;
+        }
     }
 }

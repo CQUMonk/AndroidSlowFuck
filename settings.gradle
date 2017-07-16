@@ -1,1 +1,1 @@
-include ':app', ':thunderstart'
+include ':app', ':thunderstart', ':imagepicker'

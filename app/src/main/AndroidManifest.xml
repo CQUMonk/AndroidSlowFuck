@@ -34,7 +34,9 @@
         <activity android:name=".md5.MD5Activity" />
         <!-- mvp demo -->
         <activity android:name=".weather.ui.WeatherActivity" />
-        <activity android:name=".loopview.LooperViewActivity"></activity>
+        <activity android:name=".loopview.LooperViewActivity" />
+        <activity android:name=".tags.TagActivity" />
+        <activity android:name=".web.ui.activity.WebviewActivity"></activity>
     </application>
 
 </manifest>
