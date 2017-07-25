@@ -1,5 +1,6 @@
 package com.beijing.giraffeman.androidslowfuck.widgets;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -14,9 +15,10 @@ import com.beijing.giraffeman.androidslowfuck.R;
  * Created by giraffe on 2017/4/5.
  */
 
-public class LoadingDialog extends Dialog {
+public class LoadingDialog extends AlertDialog {
 
     private static final String TAG = "LoadingDialog";
+    private String mLoadingMsg;
 
     private TextView mTextView;
 
