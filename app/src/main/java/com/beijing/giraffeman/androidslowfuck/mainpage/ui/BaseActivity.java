@@ -10,6 +10,6 @@ public class BaseActivity extends FragmentActivity {
 
     public void setContentView(int layoutID){
         super.setContentView(layoutID);
-        this.getWindow().setContentView();
+       // this.getWindow().setContentView();
     }
 }

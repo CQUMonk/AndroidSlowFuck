@@ -36,7 +36,8 @@
         <activity android:name=".weather.ui.WeatherActivity" />
         <activity android:name=".loopview.LooperViewActivity" />
         <activity android:name=".tags.TagActivity" />
-        <activity android:name=".web.ui.activity.WebviewActivity"></activity>
+        <activity android:name=".web.ui.activity.WebviewActivity"/>
+        <activity android:name=".storage.StorageActivity"/>
     </application>
 
 </manifest>
