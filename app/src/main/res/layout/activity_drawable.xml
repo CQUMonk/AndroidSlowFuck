@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="50dp">
+
+    <com.beijing.giraffeman.androidslowfuck.widgets.HeraLoadingIndicator
+        android:id="@+id/iv_drawable_circle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/yellow"
+        android:layout_marginBottom="10dp"
+        />
+    <ImageView
+        android:id="@+id/view_split"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/grey"
+        android:src="@android:color/holo_red_light"
+        android:layout_below="@id/iv_drawable_circle"
+        android:layout_marginTop="0dp"
+        android:padding="5dp"/>
+
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="control"
+        android:text="start/stop" />
+
+
+</RelativeLayout>

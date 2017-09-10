@@ -36,8 +36,10 @@
         <activity android:name=".weather.ui.WeatherActivity" />
         <activity android:name=".loopview.LooperViewActivity" />
         <activity android:name=".tags.TagActivity" />
-        <activity android:name=".web.ui.activity.WebviewActivity"/>
-        <activity android:name=".storage.StorageActivity"/>
+        <activity android:name=".web.ui.activity.WebviewActivity" />
+        <activity android:name=".storage.StorageActivity" />
+        <activity android:name=".animations.AnimationsActivity"/>
+        <activity android:name=".animations.ui.DrawableActivity"/>
     </application>
 
 </manifest>

@@ -14,6 +14,7 @@ import com.beijing.giraffeman.androidslowfuck.loopview.LooperViewActivity;
 import com.beijing.giraffeman.androidslowfuck.mainpage.adapter.MainPageRecyclerViewAdapter;
 import com.beijing.giraffeman.androidslowfuck.mainpage.model.NavigatorItem;
 import com.beijing.giraffeman.androidslowfuck.md5.MD5Activity;
+import com.beijing.giraffeman.androidslowfuck.animations.AnimationsActivity;
 import com.beijing.giraffeman.androidslowfuck.storage.StorageActivity;
 import com.beijing.giraffeman.androidslowfuck.tags.TagActivity;
 import com.beijing.giraffeman.androidslowfuck.weather.ui.WeatherActivity;
@@ -69,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
                 WebviewActivity.class));
         mModules.add(new NavigatorItem("Storage",getResources().getDrawable(R.drawable.icon),
                 StorageActivity.class));
+        mModules.add(new NavigatorItem("Animation",getResources().getDrawable(R.drawable.icon),
+                AnimationsActivity.class));
     }
 
 
